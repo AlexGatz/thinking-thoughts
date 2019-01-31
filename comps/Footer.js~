@@ -1,7 +1,0 @@
-import gitHubIcon from "../github-logo.svg";
-
-const Footer = () => (
-    <div>
-      {gitHubIcon}
-    </div>
-);
