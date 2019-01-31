@@ -1,7 +1,5 @@
-*
-!.gitignore
-!package.json
-!comps/
-!pages/
-!static/
-!.next/
+.git/
+.next/
+node_modules/
+
+*~
