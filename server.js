@@ -23,7 +23,13 @@ app.prepare()
     const server = express();
 
     server.get('/posts', (req, res) => {
-        PostModel.find({})
+        PostModel.find({}).exec(function(err, posts){
+            if (err) {
+                res.render('error', {status: 500});
+            } else {
+                res.json(posts);
+            }
+        })
     });
 
     server.get('*', (req, res) => {
