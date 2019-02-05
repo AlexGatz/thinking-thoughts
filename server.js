@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
-const conn = mongoose.createConnection('mongodb://UserName:Password@ds117545.mlab.com:17545/thinking-thoughts');
+
+const credentials = ('./credentials.js');
+const conn = mongoose.createConnection('mongodb://' + credentials.user() + ':' + credentials.password() + '@ds117545.mlab.com:17545/thinking-thoughts');
 
 const Post = new Schema({
     id: ObjectId,
@@ -22,7 +23,7 @@ app.prepare()
 .then(() => {
     const server = express();
 
-    server.all('/posts', (req, res) => {
+    server.get('/posts', (req, res) => {
         PostModel.find({}).exec(function(err, posts){
             if (err) {
                 res.render('error', {status: 500});

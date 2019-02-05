@@ -1,5 +1,6 @@
 .git/
 .next/
 node_modules/
-
+pass.js
+user.js
 *~
