@@ -9,8 +9,10 @@ const Posts = (props) => (
 );
 
 Posts.getInitialProps = async function () {
-    const res = await fetch('localhost:3000/posts');
+    const res = await fetch('/posts');
     const message = await res.json();
+
+    console.log({message});
 
     return {message};
 };

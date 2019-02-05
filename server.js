@@ -22,7 +22,7 @@ app.prepare()
 .then(() => {
     const server = express();
 
-    server.get('/posts', (req, res) => {
+    server.all('/posts', (req, res) => {
         PostModel.find({}).exec(function(err, posts){
             if (err) {
                 res.render('error', {status: 500});
