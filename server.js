@@ -8,7 +8,7 @@ const handle = app.getRequestHandler();
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
-const conn = mongoose.createConnection('mongodb://ThatGuy:FoRd.220099@ds117545.mlab.com:17545/thinking-thoughts');
+const conn = mongoose.createConnection('mongodb://UserName:Password@ds117545.mlab.com:17545/thinking-thoughts');
 
 const Post = new Schema({
     id: ObjectId,
