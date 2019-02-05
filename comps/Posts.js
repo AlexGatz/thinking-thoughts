@@ -1,18 +1,18 @@
-import fetch from "isomorphine-unfetch";
+import fetch from "isomorphic-unfetch";
 
 const Posts = (props) => (
     <div>      
       {props.message.map(({message}) => (
-          <p>{message.content}</p>
+          <p>{message.message}</p>
       ))}      
       {props.message.map(({message}) => (
-          <p>{message.date} {message.time}</p>
+          <p>{message.date}</p>
       ))}      
     </div>
 );
 
 Posts.getInitialProps = async function () {
-    const res = await fetch('api adress to get texts');
+    const res = await fetch('localhost:3000/posts');
     const message = await res.json();
 
     console.log({message});
