@@ -8,10 +8,13 @@ const handle = app.getRequestHandler();
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
-const credentials = ('./credentials.js');
-const conn = mongoose.createConnection('mongodb://' + credentials.user() + ':' + credentials.password() + '@ds117545.mlab.com:17545/thinking-thoughts');
+const credentials = require('./credentials.js'); 
+const username = credentials.username;
+const password = credentials.password;
+const serverUrl = ('mongodb://' + username + ':' + password + '@ds117545.mlab.com:17545/thinking-thoughts');
+const conn = mongoose.createConnection(serverUrl);
 
-const Post = new Schema({
+const Post = new Schema({ 
     id: ObjectId,
     message: { type: String, match: /[a-z]/ },
     date: { type: Date, default: Date.now }
