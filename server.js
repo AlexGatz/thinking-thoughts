@@ -9,9 +9,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const credentials = require('./credentials.js'); 
-const username = credentials.username;
-const password = credentials.password;
-const serverUrl = ('mongodb://' + username + ':' + password + '@ds117545.mlab.com:17545/thinking-thoughts');
+const serverUrl = ('mongodb://' + credentials.username + ':' + credentials.password + '@ds117545.mlab.com:17545/thinking-thoughts');
 const conn = mongoose.createConnection(serverUrl);
 
 const Post = new Schema({ 
@@ -20,7 +18,7 @@ const Post = new Schema({
     date: { type: Date, default: Date.now }
 });
 
-const PostModel = conn.model('Posts', Post);
+const PostModel = conn.model('Posts', Post); 
 
 app.prepare()
 .then(() => {

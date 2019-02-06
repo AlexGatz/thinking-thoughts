@@ -1,15 +1,10 @@
 import Layout from "../comps/Layout.js";
 import fetch from "isomorphic-unfetch";
-//import Posts from "../comps/Posts.js";
+import Posts from "../comps/Posts.js";
 
 const Index = (props) => (
     <Layout>
-        {props.messages.map((message) => (
-            <React.Fragment key={message._id}>
-                <p >{message.message}</p>
-                <p>{message.date}</p>
-            </React.Fragment>
-        ))}
+        <Posts posts={props.messages}/>
     </Layout>
 );
 

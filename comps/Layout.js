@@ -5,6 +5,8 @@ const Layout = (props) => (
     {props.children}
     <Footer/>
     <style jsx global>{`
+      @import url("https://fonts.googleapis.com/css?family=Anonymous+Pro");
+
       body {
          margin: 0;
          padding: 0;
@@ -12,6 +14,7 @@ const Layout = (props) => (
          background-color: white;
          width: 100vw;
          height: 100vh;
+         font-family: 'Anonymous Pro', monospace;
        } 
     `}</style>
   </div>

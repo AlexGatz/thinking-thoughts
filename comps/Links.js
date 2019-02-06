@@ -1,14 +1,15 @@
 import ReactSVG from "react-svg";
 
 const Links = () => (
-    <div className="logoStyle">
-      <ReactSVG src="../static/github-logo.svg" onClick={() => {location.href = "https://github.com/AlexGatz";}} svgStyle={{ height: 30, width: 30 }} />
+    <div>
+      <ReactSVG className="svg" src="../static/github-logo.svg" onClick={() => {location.href = "https://github.com/AlexGatz";}} svgStyle={{ height: 50, width: 50}} />
       <style jsx>{`
-        .logoStyle {
-          position: absolute;
+        div {
+          position: fixed;
           bottom: 0;
           left: 0;
-          padding: 5px;
+          margin: 1vw;
+          cursor: pointer;
         }
      `}</style>
     </div>
