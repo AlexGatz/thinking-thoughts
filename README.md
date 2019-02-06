@@ -1,3 +1,8 @@
+## TL;DR
+Uses next.js, express.js, mongodb, and will be hosted on heroku. A custom react-native app sends messages to the express.js server which auto populates to the webpage for everoyone to read. Best for those random ideas you have while on the fly! Coming soon: "thoughts about thoughts" feature. 
+
+To use this you must add your own credentials.js file with a username and password and also change the url to match your mongodb (I used mLab). Afterwards you can run the server by simply typing `npm run dev` per usual after installing the dependencies of course. 
+
 ## Description
 I wanted to come up with a super simple project where I could learn a combination of aspects of web development that I wanted to imporove upon. Also I wanted to learn how to play with next js (which isn't that different than just using react but there certainly are some major differences).
 
