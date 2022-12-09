@@ -12,7 +12,7 @@
   "author": "Alex J. Gatz",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "isomorphic-unfetch": "^3.0.0",
     "mongoose": "^5.4.8",
     "next": "^7.0.2",
